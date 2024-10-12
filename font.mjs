@@ -70,7 +70,7 @@ export function parseRawFont(data, width = 7, height = 8, halfPixel = 1) {
 }
 
 export function generateBdfFont({
-  foundary = 'misc',
+  foundry = 'misc',
   family = 'CALL3327',
   weight = 'medium',
   slant = 'r',
@@ -92,7 +92,7 @@ export function generateBdfFont({
   const font =
     '-' +
     [
-      foundary,
+      foundry,
       family,
       weight,
       slant,
@@ -111,7 +111,11 @@ export function generateBdfFont({
 FONT ${font}
 SIZE ${pixelSize} ${xRes} ${yRes}
 FONTBOUNDINGBOX ${fontBoundingBox.join(' ')}
-STARTPROPERTIES 2
+STARTPROPERTIES 6
+FOUNDRY "${foundry}"
+FAMILY_NAME "${family}"
+FONT_NAME "${family}"
+FACE_NAME "${family}"
 FONT_ASCENT ${fontAscent}
 FONT_DESCENT ${fontDescent}
 ENDPROPERTIES
